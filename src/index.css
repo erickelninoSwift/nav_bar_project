@@ -343,7 +343,6 @@ nav {
   }
   .links-container {
     display: flex;
-    gap: 0.5rem;
     color: var(--primary-400);
   }
   links a {
@@ -351,7 +350,7 @@ nav {
   }
 
   links a:hover {
-    background-color: transparent;
+    background-color: var(--white);
     color: var(--primary-600);
     padding: 0;
   }
