@@ -1,11 +1,48 @@
 import { useState } from "react";
+import "./index.css";
+import logo from "./logo.svg";
+import {
+  FaBars,
+  FaBehance,
+  FaFacebook,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 export const Navbar = ({ links, socials }) => {
   const [showList, setShowList] = useState(false);
   return (
-    <ul>
-      {links.map((link) => {
-        return <li key={link.id}>{link.text}</li>;
-      })}
-    </ul>
+    <nav>
+      <div className="navBar">
+        <div className="nav-header">
+          <img src={logo} alt="logo" className="logo" />
+          <button className="nav-toggle" onClick={() => setShowList(!showList)}>
+            <FaBars />
+          </button>
+        </div>
+
+        <div className={showList ? "links show-container" : "links"}>
+          <ul>
+            {links.map((link) => {
+              return (
+                <li key={link.id}>
+                  <a href={link.url}>{link.text}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        {/* <div className="social-links">
+          <ul className="icons-link">
+            {socials.map((social, index) => {
+              return (
+                <li key={social.id}>
+                  <a href={social.url}>{social.icon}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div> */}
+      </div>
+    </nav>
   );
 };
