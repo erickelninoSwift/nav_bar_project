@@ -33,7 +33,7 @@ export const Navbar = ({ links, socials }) => {
           className={showList ? "links show-container" : "links"}
           ref={linksContainerRef}
         >
-          <ul ref={linksRef}>
+          <ul ref={linksRef} className="links-container">
             {links.map((link) => {
               return (
                 <li key={link.id}>
@@ -44,17 +44,15 @@ export const Navbar = ({ links, socials }) => {
           </ul>
         </div>
 
-        {/* <div className="social-links">
-          <ul className="icons-link">
-            {socials.map((social, index) => {
-              return (
-                <li key={social.id}>
-                  <a href={social.url}>{social.icon}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </div> */}
+        <ul className="icons-link">
+          {socials.map((social) => {
+            return (
+              <li key={social.id}>
+                <a href={social.url}>{social.icon}</a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </nav>
   );

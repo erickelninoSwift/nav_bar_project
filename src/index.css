@@ -293,7 +293,7 @@ nav {
 .links a:hover {
   background-color: var(--primary-500);
   color: var(--white);
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 
 .links {
@@ -304,4 +304,55 @@ nav {
 
 .show-container {
   height: 10rem;
+}
+
+.icons-link {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+  .navBar {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .icons-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary-500);
+  }
+  .icons-link a {
+    color: var(--primary-500);
+  }
+  .icons-link a:hover {
+    color: var(--grey-500);
+    padding-top: 3px;
+  }
+  .links {
+    height: auto !important;
+  }
+  .links-container {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--primary-400);
+  }
+  links a {
+    padding: 0;
+  }
+
+  links a:hover {
+    background-color: transparent;
+    color: var(--primary-600);
+    padding: 0;
+  }
 }
